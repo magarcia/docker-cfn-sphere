@@ -1,0 +1,8 @@
+ARG PYTHON_VERSION=2.7-alpine
+FROM python:${PYTHON_VERSION}
+
+ARG CFN_SPHERE_VERSION=
+ARG PYTHON_VERSION
+
+RUN apk add --no-cache py-pip git
+RUN pip install "cfn-sphere${CFN_SPHERE_VERSION:+==}${CFN_SPHERE_VERSION}"
