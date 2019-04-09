@@ -9,14 +9,14 @@ docker run --rm  \
     --workdir=$(pwd) \
     -v $(pwd):$(pwd) \
     -v $HOME/.aws:/root/.aws \
-    cfn-sphere \
+    magarcia/cfn-sphere:latest \
     cf <command>
 ```
 
 In order to make it easier to use, create an alias with this (use single quotes):
 
 ```bash
-alias cf='docker run --rm  --workdir=$(pwd) -v $(pwd):$(pwd) -v $HOME/.aws:/root/.aws cfn-sphere cf'
+alias cf='docker run --rm  --workdir=$(pwd) -v $(pwd):$(pwd) -v $HOME/.aws:/root/.aws magarcia/cfn-sphere:latest cf'
 ```
 
 Now the alias is going to work like the cfn-sphere command.
